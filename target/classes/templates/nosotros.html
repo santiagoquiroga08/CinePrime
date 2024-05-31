@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CinePrime</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            /* Paleta de colores */
+            :root {
+                --color-1: #581845;
+                --color-2: #900C3F;
+                --color-3: #C70039;
+                --color-4: #FF5733;
+                --color-5: #FFC300;
+                --color-6: #DAF7A6;
+                --color-7: #2C0C23; 
+            }
+
+            body {
+                background-color: var(--color-7);
+                color: white; /* Cambiar color de texto a blanco */
+            }
+
+            .navbar {
+                background-color: var(--color-1);
+            }
+
+            .navbar-brand, .nav-link, .btn-outline-success {
+                color: var(--color-5) !important;
+            }
+
+            .navbar-brand:hover, .nav-link:hover, .btn-outline-success:hover {
+                color: var(--color-6) !important;
+            }
+
+            .btn-outline-success {
+                border-color: var(--color-5);
+            }
+
+            footer {
+                margin-top: 20px;
+                padding: 20px;
+                background-color: var(--color-1);
+                color: var(--color-5);
+                text-align: center;
+            }
+
+            .fixed-top-padding {
+                padding-top: 70px; /* Ajustar según la altura del navbar */
+            }
+
+            .card-img-top {
+                width: 100%;
+                height: 25.25vw; /* 9/16 aspect ratio */
+                object-fit: cover;
+            }
+            /* Estilos específicos para el pie de página */
+            .footer-column h4 {
+                margin-bottom: 15px;
+            }
+
+            .footer-column p, .footer-column ul {
+                margin-bottom: 10px;
+                text-align: left;
+            }
+
+            .footer-column ul {
+                padding: 0;
+                list-style: none;
+            }
+
+            .footer-column ul li {
+                display: inline;
+                margin-right:10px;
+            }
+
+            .footer-column ul li a img {
+                width: 24px; /* Tamaño de las imágenes de redes sociales */
+                height: 24px;
+            }
+
+            /* Estilos para la página de nosotros */
+            .nosotros-container {
+                margin-top: 100px;
+                background-color: var(--color-1);
+                padding: 30px;
+                border-radius: 10px;
+            }
+
+            .nosotros-container h2, .nosotros-container h4 {
+                color: var(--color-5);
+            }
+
+            .nosotros-container p {
+                color: var(--color-6);
+            }
+
+            .nosotros-container hr {
+                border-top: 1px solid var(--color-5);
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Encabezado -->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <a class="navbar-brand" href="/">CinePrime</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/funciones}">Funciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/nosotros}">Sobre Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/preguntas}">Preguntas Frecuentes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/contacto}">Contáctanos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/servicios}">Nuestros Servicios</a>
+                    </li>
+                </ul>
+                <a class="nav-link" th:href="@{/login}"><button class="btn btn-outline-success my-2 my-sm-0 ml-3" type="button">Iniciar Sesión</button></a>
+            </div>
+        </nav>
+
+                <!-- Contenido de la página de nosotros -->
+        <div class="content container">
+            <div class="nosotros-container mx-auto">
+                <h2>Nosotros</h2>
+                <hr>
+                <h4>VISIÓN</h4>
+                <p>Convertirnos en el referente principal de entretenimiento en Colombia y destacarnos como líderes 
+                    en servicio y tecnología en toda Latinoamérica.</p>
+                <hr>
+                <h4>MISIÓN</h4>
+                <p>Ofrecer experiencias de diversión y entretenimiento de alta calidad mediante la distribución y 
+                    exhibición de películas y servicios complementarios, asegurando una rentabilidad sostenible que 
+                    fomente un entorno de desarrollo continuo para nuestros empleados, generando valor para nuestros
+                     accionistas y contribuyendo positivamente a las comunidades en las que operamos.</p>
+                <hr>
+                <h4>PRINCIPIOS</h4>
+                <h5>INTEGRIDAD</h5>
+                <p>Gestionamos con responsabilidad y transparencia todos los recursos, insumos y materiales bajo 
+                    nuestra custodia. Actuamos con rectitud en todas nuestras interacciones y nos comprometemos 
+                    sinceramente con la eficacia y la honestidad en nuestro trabajo.</p>
+                <h5>RESPETO</h5>
+                <p>Valoramos y respetamos las diferencias individuales, fomentando un ambiente de comprensión, 
+                    tolerancia y aceptación tanto hacia nosotros mismos como hacia los demás.</p>
+                <h5>VALOR AÑADIDO PARA CLIENTES, ACCIONISTAS Y EMPLEADOS</h5>
+                <p>Todas nuestras acciones están dirigidas a aportar beneficios a nuestros clientes, accionistas y 
+                    empleados, quienes son fundamentales para nuestro negocio.</p>
+                <h5>EXCELENCIA EN EL SERVICIO AL CLIENTE</h5>
+                <p>Nos esforzamos por brindar un servicio excepcional caracterizado por la amabilidad, rapidez, 
+                    trato personalizado y la entrega de información precisa y oportuna a nuestros clientes.</p>
+                <h5>CUMPLIMIENTO LEGAL</h5>
+                <p>Cumplimos rigurosamente con las normativas internas y las leyes y obligaciones legales y 
+                    sociales.</p>
+                <h5>EQUIDAD</h5>
+                <p>Nos aseguramos de que todos los procesos de análisis, evaluación y decisión sean justos y 
+                    equitativos para todos los involucrados.</p>
+            </div>
+        </div>
+
+        <!-- Pie de página -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 footer-column">
+                        <h4>CinePrime</h4>
+                        <p>Nuestra misión es brindar experiencias cinematográficas excepcionales que inspiren y 
+                            entretengan a nuestra audiencia, ofreciendo el mejor servicio y tecnología de vanguardia 
+                            en un ambiente cómodo y acogedor.</p>
+                    </div>
+                    <div class="col-md-4 footer-column">
+                        <h4>Contacto</h4>
+                        <p>Teléfono: 316 6434307<br> Email: csquiroga@uts.edu.co <br> Unidades Tecnológicas de Santander</p>
+                    </div>
+                    <div class="col-md-4 footer-column">
+                        <h4>Redes Sociales</h4>
+                        <p>Síguenos en nuestras redes sociales para mantenerte actualizado:</p>
+                        <ul>
+                            <li><a href="https://facebook.com" target="_blank"><img src="imagenes/facebook.png" alt="facebook"></a></li>
+                            <li><a href="https://twitter.com" target="_blank"><img src="imagenes/twitter.png" alt="twitter"></a></li>
+                            <li><a href="https://instagram.com" target="_blank"><img src="imagenes/instagram.png" alt="instagram"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <p>&copy; 2024 CinePrime. Todos los derechos reservados.</p>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+</html>

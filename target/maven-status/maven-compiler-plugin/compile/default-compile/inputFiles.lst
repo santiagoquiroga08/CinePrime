@@ -1,0 +1,16 @@
+C:\Spring\workspace\CinePrime\src\main\java\com\CinePrime\app\documents\Pelicula.java
+C:\Spring\workspace\CinePrime\src\main\java\com\CinePrime\app\CinePrimeApplication.java
+C:\Spring\workspace\CinePrime\src\main\java\com\CinePrime\app\controller\AdministradorController.java
+C:\Spring\workspace\CinePrime\src\main\java\com\CinePrime\app\controller\AuthController.java
+C:\Spring\workspace\CinePrime\src\main\java\com\CinePrime\app\controller\HomeController.java
+C:\Spring\workspace\CinePrime\src\main\java\com\CinePrime\app\documents\Administrador.java
+C:\Spring\workspace\CinePrime\src\main\java\com\CinePrime\app\controller\RegistroController.java
+C:\Spring\workspace\CinePrime\src\main\java\com\CinePrime\app\documents\Usuario.java
+C:\Spring\workspace\CinePrime\src\main\java\com\CinePrime\app\repository\UsuarioRepository.java
+C:\Spring\workspace\CinePrime\src\main\java\com\CinePrime\app\exception\DuplicateEntryException.java
+C:\Spring\workspace\CinePrime\src\main\java\com\CinePrime\app\controller\UsuarioController.java
+C:\Spring\workspace\CinePrime\src\main\java\com\CinePrime\app\repository\AdministradorRepository.java
+C:\Spring\workspace\CinePrime\src\main\java\com\CinePrime\app\repository\PeliculaRepository.java
+C:\Spring\workspace\CinePrime\src\main\java\com\CinePrime\app\exception\GlobalExceptionHandler.java
+C:\Spring\workspace\CinePrime\src\main\java\com\CinePrime\app\controller\ReservaController.java
+C:\Spring\workspace\CinePrime\src\main\java\com\CinePrime\app\exception\NotFoundException.java

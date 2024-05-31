@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinePrime - Funciones</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Paleta de colores */
+        :root {
+            --color-1: #581845;
+            --color-2: #900C3F;
+            --color-3: #C70039;
+            --color-4: #FF5733;
+            --color-5: #FFC300;
+            --color-6: #DAF7A6;
+            --color-7: #2C0C23;
+        }
+
+        body {
+            background-color: var(--color-7);
+            color: white;
+        }
+
+        .navbar {
+            background-color: var(--color-1);
+        }
+
+        .navbar-brand, .nav-link, .btn-outline-success {
+            color: var(--color-5) !important;
+        }
+
+        .navbar-brand:hover, .nav-link:hover, .btn-outline-success:hover {
+            color: var(--color-6) !important;
+        }
+
+        .btn-outline-success {
+            border-color: var(--color-5);
+        }
+
+        footer {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: var(--color-1);
+            color: var(--color-5);
+            text-align: center;
+        }
+
+        .fixed-top-padding {
+            padding-top: 70px; /* Ajustar según la altura del navbar */
+        }
+
+        .card-img-top {
+            width: 100%;
+            height: 25.25vw; /* 9/16 aspect ratio */
+            object-fit: cover;
+        }
+
+        .footer-column h4 {
+            margin-bottom: 15px;
+        }
+
+        .footer-column p, .footer-column ul {
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .footer-column ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .footer-column ul li a img {
+            width: 24px; /* Tamaño de las imágenes de redes sociales */
+            height: 24px;
+        }
+
+        .movie-item {
+            background-color: var(--color-1);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        .movie-title {
+            color: var(--color-5);
+        }
+
+        .movie-item img {
+            border-radius: 10px;
+        }
+
+        .fixed-top-padding h1 {
+            color: var(--color-5);
+        }
+
+        .btn-primary {
+            background-color: var(--color-4);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-3);
+        }
+
+        .movie-item p {
+            color: var(--color-6);
+        }
+    </style>
+</head>
+<body>
+    <!-- Encabezado -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <a class="navbar-brand" href="/">CinePrime</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                        <a class="nav-link" th:href="@{/funciones}">Funciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/nosotros}">Sobre Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/preguntas}">Preguntas Frecuentes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/contacto}">Contáctanos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/servicios}">Nuestros Servicios</a>
+                    </li>
+            </ul>
+            <a class="nav-link" th:href="@{/login}"><button class="btn btn-outline-success my-2 my-sm-0 ml-3" type="button">Iniciar Sesión</button></a>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="container fixed-top-padding">
+        <h1 class="text-center my-5">Funciones</h1>
+        <div class="row">
+            <div class="col-md-12 movie-item">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img src="imagenes/oppenheimer.jpg" alt="Poster de la película" class="img-fluid">
+                    </div>
+                    <div class="col-md-9">
+                        <h5>Oppenheimer</h5>
+                        <p>Durante la Segunda Guerra Mundial, el teniente general Leslie Groves designa al 
+                            físico J. Robert Oppenheimer para un grupo de trabajo que está desarrollando el 
+                            Proyecto Manhattan, cuyo objetivo consiste en fabricar la primera bomba atómica.</p>
+                            <a th:href="@{/login}" class="btn btn-primary bt">Ver Función</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 movie-item">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img src="imagenes/barbie.jpg" alt="Poster de la película" class="img-fluid">
+                    </div>
+                    <div class="col-md-9">
+                        <h5>Barbie</h5>
+                        <p>Después de ser expulsada de Barbieland por no ser una muñeca de aspecto perfecto, 
+                            Barbie parte hacia el mundo humano para encontrar la verdadera felicidad.</p>
+                            <a th:href="@{/login}" class="btn btn-primary bt">Ver Función</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 movie-item">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img src="imagenes/poorthing.jpg" alt="Poster de la película" class="img-fluid">
+                    </div>
+                    <div class="col-md-9">
+                        <h5>Poor Things</h5>
+                        <p>El Dr. Godwin resucita a la bella Bella Baxter para que aprenda a su lado. 
+                            Sin embargo, ella huye en compañía de un abogado porque quiere recorrer el 
+                            mundo, sedienta de deseo de igualdad y libertad.</p>
+                            <a th:href="@{/login}" class="btn btn-primary">Ver Función</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 footer-column">
+                    <h4>CinePrime</h4>
+                    <p>Nuestra misión es brindar experiencias cinematográficas excepcionales que inspiren y 
+                        entretengan a nuestra audiencia, ofreciendo el mejor servicio y tecnología de vanguardia 
+                        en un ambiente cómodo y acogedor.</p>
+                </div>
+                <div class="col-md-4 footer-column">
+                    <h4>Contacto</h4>
+                    <p>Teléfono: 316 6434307<br> Email: csquiroga@uts.edu.co <br> Unidades Tecnológicas de Santander</p>
+                </div>
+                <div class="col-md-4 footer-column">
+                    <h4>Redes Sociales</h4>
+                    <p>Síguenos en nuestras redes sociales para mantenerte actualizado:</p>
+                    <ul>
+                        <li><a href="https://facebook.com" target="_blank"><img src="imagenes/facebook.png" alt="facebook"></a></li>
+                        <li><a href="https://twitter.com" target="_blank"><img src="imagenes/twitter.png" alt="twitter"></a></li>
+                        <li><a href="https://instagram.com" target="_blank"><img src="imagenes/instagram.png" alt="instagram"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2024 CinePrime. Todos los derechos reservados.</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

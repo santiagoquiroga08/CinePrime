@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CinePrime</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            /* Paleta de colores */
+            :root {
+                --color-1: #581845;
+                --color-2: #900C3F;
+                --color-3: #C70039;
+                --color-4: #FF5733;
+                --color-5: #FFC300;
+                --color-6: #DAF7A6;
+                --color-7: #2C0C23; 
+            }
+
+            body {
+                background-color: var(--color-7);
+                color: white; /* Cambiar color de texto a blanco */
+            }
+
+            .navbar {
+                background-color: var(--color-1);
+            }
+
+            .navbar-brand, .nav-link, .btn-outline-success {
+                color: var(--color-5) !important;
+            }
+
+            .navbar-brand:hover, .nav-link:hover, .btn-outline-success:hover {
+                color: var(--color-6) !important;
+            }
+
+            .btn-outline-success {
+                border-color: var(--color-5);
+            }
+
+            footer {
+                margin-top: 20px;
+                padding: 20px;
+                background-color: var(--color-1);
+                color: var(--color-5);
+                text-align: center;
+                flex-shrink: 0;
+            }
+
+            .fixed-top-padding {
+                padding-top: 70px; /* Ajustar según la altura del navbar */
+            }
+
+            .card-img-top {
+                width: 100%;
+                height: 25.25vw; /* 9/16 aspect ratio */
+                object-fit: cover;
+            }
+            /* Estilos específicos para el pie de página */
+            .footer-column h4 {
+                margin-bottom: 15px;
+            }
+
+            .footer-column p, .footer-column ul {
+                margin-bottom: 10px;
+                text-align: left;
+            }
+
+            .footer-column ul {
+                padding: 0;
+                list-style: none;
+            }
+
+            .footer-column ul li {
+                display: inline;
+                margin-right:10px;
+            }
+
+            .footer-column ul li a img {
+                width: 24px; /* Tamaño de las imágenes de redes sociales */
+                height: 24px;
+            }
+
+            /* Estilos para la página de preguntas frecuentes */
+            .faq-container {
+                margin-top: 100px;
+                background-color: var(--color-1);
+                padding: 30px;
+                border-radius: 10px;
+            }
+
+            .faq-container h2, .faq-container h4 {
+                color: var(--color-5);
+            }
+
+            .faq-container p {
+                color: var(--color-6);
+            }
+
+            .faq-container .question {
+                cursor: pointer;
+                color: var(--color-5);
+                margin-bottom: 10px;
+            }
+
+            .faq-container .answer {
+                display: none;
+                margin-bottom: 20px;
+            }
+
+            .faq-container .answer p {
+                color: var(--color-6);
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Encabezado -->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <a class="navbar-brand" href="/">CinePrime</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/funciones}">Funciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/nosotros}">Sobre Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/preguntas}">Preguntas Frecuentes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/contacto}">Contáctanos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/servicios}">Nuestros Servicios</a>
+                    </li>
+                </ul>
+                <a class="nav-link" th:href="@{/login}"><button class="btn btn-outline-success my-2 my-sm-0 ml-3" type="button">Iniciar Sesión</button></a>
+            </div>
+        </nav>
+        
+        <!-- Contenido de la página de preguntas frecuentes -->
+        <div class="content container">
+            <div class="faq-container mx-auto">
+                <h2>Preguntas Frecuentes</h2>
+                <hr>
+                <div class="question" onclick="toggleAnswer('faq1')">¿Cómo puedo comprar boletos?</div>
+                <div class="answer" id="faq1">
+                    <p>Puedes comprar boletos directamente en nuestro sitio web o en taquilla en el cine. También ofrecemos la opción de comprar boletos a través de nuestra aplicación móvil.</p>
+                </div>
+                <div class="question" onclick="toggleAnswer('faq2')">¿Cuáles son los métodos de pago aceptados?</div>
+                <div class="answer" id="faq2">
+                    <p>Aceptamos pagos en efectivo, tarjetas de débito y crédito, así como pagos móviles a través de aplicaciones como Apple Pay y Google Pay.</p>
+                </div>
+                <div class="question" onclick="toggleAnswer('faq3')">¿Ofrecen descuentos para estudiantes o personas mayores?</div>
+                <div class="answer" id="faq3">
+                    <p>Sí, ofrecemos descuentos especiales para estudiantes y personas mayores. Solo presenta tu identificación válida en la taquilla para recibir el descuento.</p>
+                </div>
+                <div class="question" onclick="toggleAnswer('faq4')">¿Puedo cancelar o cambiar mi reserva de boletos?</div>
+                <div class="answer" id="faq4">
+                    <p>Dependiendo de nuestras políticas de cancelación y cambio, es posible que puedas cancelar o cambiar tu reserva de boletos. Te recomendamos que nos contactes directamente para obtener más información.</p>
+                </div>
+                <div class="question" onclick="toggleAnswer('faq5')">¿Qué medidas de seguridad tienen implementadas en los cines?</div>
+                <div class="answer" id="faq5">
+                    <p>Nuestros cines cuentan con medidas de seguridad como controles de temperatura, distanciamiento social, desinfección regular de las áreas comunes y la obligatoriedad del uso de mascarillas para garantizar la seguridad de nuestros clientes y empleados.</p>
+                </div>
+                <div class="question" onclick="toggleAnswer('faq6')">¿Tienen opciones de alimentos y bebidas en los cines?</div>
+                <div class="answer" id="faq6">
+                    <p>Sí, ofrecemos una variedad de alimentos y bebidas en nuestros cines, que van desde palomitas de maíz y refrescos hasta nachos y hot dogs. También contamos con opciones vegetarianas y sin gluten.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Pie de página -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 footer-column">
+                        <h4>CinePrime</h4>
+                        <p>Nuestra misión es brindar experiencias cinematográficas excepcionales que inspiren y 
+                            entretengan a nuestra audiencia, ofreciendo el mejor servicio y tecnología de vanguardia 
+                            en un ambiente cómodo y acogedor.</p>
+                    </div>
+                    <div class="col-md-4 footer-column">
+                        <h4>Contacto</h4>
+                        <p>Teléfono: 316 6434307<br> Email: csquiroga@uts.edu.co <br> Unidades Tecnológicas de Santander</p>
+                    </div>
+                    <div class="col-md-4 footer-column">
+                        <h4>Redes Sociales</h4>
+                        <p>Síguenos en nuestras redes sociales para mantenerte actualizado:</p>
+                        <ul>
+                            <li><a href="https://facebook.com" target="_blank"><img src="imagenes/facebook.png" alt="facebook"></a></li>
+                            <li><a href="https://twitter.com" target="_blank"><img src="imagenes/twitter.png" alt="twitter"></a></li>
+                            <li><a href="https://instagram.com" target="_blank"><img src="imagenes/instagram.png" alt="instagram"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <p>&copy; 2024 CinePrime. Todos los derechos reservados.</p>
+        </footer>
+        <script>
+            function toggleAnswer(id) {
+                var answer = document.getElementById(id);
+                if (answer.style.display === "none") {
+                    answer.style.display = "block";
+                } else {
+                    answer.style.display = "none";
+                }
+            }
+        </script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+</html>

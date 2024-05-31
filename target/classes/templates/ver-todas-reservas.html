@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Todas las Reservas - CinePrime</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Paleta de colores */
+        :root {
+            --color-1: #581845;
+            --color-2: #900C3F;
+            --color-3: #C70039;
+            --color-4: #FF5733;
+            --color-5: #FFC300;
+            --color-6: #DAF7A6;
+            --color-7: #2C0C23; 
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body {
+            background-color: var(--color-7);
+            color: white; /* Cambiar color de texto a blanco */
+        }
+
+        .navbar {
+            background-color: var(--color-1);
+        }
+
+        .navbar-brand, .nav-link {
+            color: var(--color-5) !important;
+        }
+
+        .navbar-brand:hover, .nav-link:hover {
+            color: var(--color-6) !important;
+        }
+
+        .content {
+            flex: 1;
+            padding-top: 70px; /* Ajustar según la altura del navbar */
+            padding-bottom: 20px; /* Espacio para el footer */
+        }
+
+        footer {
+            background-color: var(--color-1);
+            color: var(--color-5);
+            text-align: center;
+            padding: 20px;
+            margin-top: auto;
+        }
+
+        .card-img-top {
+            width: 100%;
+            height: 25.25vw; /* 9/16 aspect ratio */
+            object-fit: cover;
+        }
+
+        /* Estilos específicos para el pie de página */
+        .footer-column h4 {
+            margin-bottom: 15px;
+        }
+
+        .footer-column p, .footer-column ul {
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .footer-column ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .footer-column ul li a img {
+            width: 24px; /* Tamaño de las imágenes de redes sociales */
+            height: 24px;
+        }
+
+        .poster-img {
+            width: 100px;
+            height: auto;
+        }
+
+        /* Estilos específicos para el título de reservas */
+        .reservas-title {
+            color: var(--color-5); /* Color naranja */
+        }
+    </style>
+</head>
+<body>
+    <!-- Encabezado -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <a class="navbar-brand" href="index.html">CinePrime</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="content container">
+        <h1 class="my-4 reservas-title">Todas las Reservas</h1>
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th>Usuario</th>
+                    <th>Email</th>
+                    <th>Película</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="reserva : ${reservas}">
+                    <td th:text="${reserva.usuario.nombre}">Usuario</td>
+                    <td th:text="${reserva.usuario.email}">Email</td>
+                    <td th:text="${reserva.pelicula.titulo}">Película</td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="/admin/dashboard" class="btn btn-secondary mt-3">Volver al Dashboard</a>
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 footer-column">
+                    <h4>CinePrime</h4>
+                    <p>Nuestra misión es brindar experiencias cinematográficas excepcionales que inspiren y 
+                        entretengan a nuestra audiencia, ofreciendo el mejor servicio y tecnología de vanguardia 
+                        en un ambiente cómodo y acogedor.</p>
+                </div>
+                <div class="col-md-4 footer-column">
+                    <h4>Contacto</h4>
+                    <p>Teléfono: 316 6434307<br> Email: csquiroga@uts.edu.co <br> Unidades Tecnológicas de Santander</p>
+                </div>
+                <div class="col-md-4 footer-column">
+                    <h4>Redes Sociales</h4>
+                    <p>Síguenos en nuestras redes sociales para mantenerte actualizado:</p>
+                    <ul>
+                        <li><a href="https://facebook.com" target="_blank"><img src="/imagenes/facebook.png" alt="facebook"></a></li>
+                        <li><a href="https://twitter.com" target="_blank"><img src="/imagenes/twitter.png" alt="twitter"></a></li>
+                        <li><a href="https://instagram.com" target="_blank"><img src="/imagenes/instagram.png" alt="instagram"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2024 CinePrime. Todos los derechos reservados.</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
